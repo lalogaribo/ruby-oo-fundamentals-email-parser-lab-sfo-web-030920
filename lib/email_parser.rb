@@ -15,6 +15,7 @@ class EmailAddressParser
     list_emails = []
        @emails.split(' ').each do |email|
        email.strip!
+       email.gsub(",", "")
        list_emails << email unless list_emails.include?(email)
     end
     puts list_emails
