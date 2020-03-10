@@ -19,3 +19,23 @@ class EmailAddressParser
      list_emails
   end
 end
+
+class EmailAddressParser
+  
+  def initialize(*emails)
+    @emails = emails
+  end
+  
+  def parse
+    list_emails = []
+    if @emails.is_a?(Array)
+      return @emails.uniq.map { |email| email}
+    else
+       @emails.split(',').each do |email|
+       email.strip!
+       list_emails << email unless list_emails.include?(email)
+     end
+    end
+     list_emails
+  end
+end
