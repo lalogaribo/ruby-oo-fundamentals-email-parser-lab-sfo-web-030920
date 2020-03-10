@@ -18,7 +18,7 @@ class EmailAddressParser
        list_emails << email unless list_emails.include?(email)
     end
     puts list_emails
-    return list_emails.join(',')
+    return list_emails
   end
 end
 
