@@ -16,7 +16,7 @@ class EmailAddressParser
        email.strip!
        list_emails << email if !list_emails.include?(email)
     end
-    return list_emails
+    return list_emails.uniq
   end
 end
 
