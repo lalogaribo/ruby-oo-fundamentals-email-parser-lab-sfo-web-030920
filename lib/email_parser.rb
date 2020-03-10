@@ -11,12 +11,14 @@ class EmailAddressParser
   end
   
   def parse
+
     list_emails = []
-     @emails.split(',').each do |email|
+       @emails.split(' ').each do |email|
        email.strip!
        list_emails << email unless list_emails.include?(email)
-     end
-     list_emails
+    end
+    puts list_emails
+    return list_emails.join(',')
   end
 end
 
